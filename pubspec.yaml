@@ -63,9 +63,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - images/fb_button.png
+    - images/google_button.png
+    - images/logo.png
+  
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -77,12 +79,28 @@ flutter:
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  ## example:
+  #fonts:
+  #  - family: Inter
+  #  - fonts:
+  #    - asset: fonts/Inter/static/Inter-Black.ttf
+  #    - asset: fonts/Inter/static/Inter-Bold.ttf
+  #      style: bold
+  #    - asset: fonts/Inter/static/Inter-ExtraBold.ttf
+  #      style: extrabold
+  #    - asset: fonts/Inter/static/Inter-ExtraLight.ttf
+  #      style: ExtraLight
+  #    - asset: fonts/Inter/static/Inter-Light.ttf
+  #      style: Light
+  #    - asset: fonts/Inter/static/Inter-Medium.ttf
+  #      style: Medium
+  #    - asset: fonts/Inter/static/Inter-Regular.ttf
+  #      style: Regular
+  #    - asset: fonts/Inter/static/Inter-SemiBold.ttf
+  #      style: SemiBold
+  #    - asset: fonts/Inter/static/Inter-Thin.ttf
+  #      style: Thin
+  ##       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

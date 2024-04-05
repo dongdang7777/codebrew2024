@@ -1,8 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:codebrew2024/services/db.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // For using json.decode
 
 class Api{
-
   static Future<Map<String,dynamic>> getNearby(String userId) async {
     final response = await http.post(
       Uri.parse('https://us-central1-test-8a935.cloudfunctions.net/app/api/nearby'),
@@ -44,5 +45,11 @@ class Api{
       throw Exception('Failed to load data');
     }
   }
-
+  
+  static  Future<Map<String, dynamic>?> getUser(String id )async {
+    final docRef =Database.db.collection("users").doc(id);
+    final response =await docRef.get();
+    Map<String,dynamic> ? data=response.data();
+    return data;
+  }
 }

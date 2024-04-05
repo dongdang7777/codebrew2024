@@ -1,5 +1,3 @@
-import 'package:codebrew2024/screen/chatbox_page.dart';
-import 'package:codebrew2024/screen/main_page.dart';
 import 'package:codebrew2024/widgets/chat_profile.dart';
 import 'package:codebrew2024/widgets/chatbox_buttonbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';

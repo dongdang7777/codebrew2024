@@ -1,6 +1,5 @@
 import 'package:codebrew2024/resources/auth_methods.dart';
-import 'package:codebrew2024/screen/main_page.dart';
-import 'package:codebrew2024/screen/settings_page.dart';
+import 'package:codebrew2024/screen/map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:codebrew2024/widgets/login_button_fb.dart';
 import 'package:codebrew2024/widgets/login_button_google.dart';
@@ -31,7 +30,7 @@ class _LoginPage extends State<LoginPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => MainPage(),
+            builder: (context) => MapPage(),
           ),
         );
       }

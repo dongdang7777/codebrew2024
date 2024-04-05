@@ -11,7 +11,6 @@ class friendlistpage extends StatelessWidget {
           color: Colors.white, 
           child: Row(
             children: [
-              // Background
               Positioned.fill(
                 child: Container(
                   color: Colors.white, 

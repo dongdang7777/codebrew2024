@@ -7,6 +7,7 @@ import 'firebase_options.dart';
 import 'package:codebrew2024/screen/login_page.dart';
 import 'package:codebrew2024/screen/profile_screen.dart';
 import 'package:codebrew2024/screen/friendlist_page.dart';
+import 'package:codebrew2024/screen/chatpage.dart';
 
 
 void main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: profile_screen(),
+      home: LoginPage(),
     );
   }
 }

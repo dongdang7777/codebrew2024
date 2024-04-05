@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
             fit: BoxFit.cover,
           ),
       Scaffold(
-          backgroundColor: Colors.transparent, // Make scaffold background transparent
+          backgroundColor: Colors.transparent, 
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,

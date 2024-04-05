@@ -3,6 +3,7 @@ import 'package:codebrew2024/widgets/chat_profile.dart';
 import 'package:codebrew2024/screen/settings_page.dart';
 import 'package:codebrew2024/screen/main_page.dart';
 import 'package:codebrew2024/widgets/chatbox_buttonbar.dart';
+import 'package:codebrew2024/widgets/bottom_navigation.dart';
 
 class ChatboxPage extends StatefulWidget {
   @override
@@ -52,11 +53,11 @@ class _ChatboxPageState extends State<ChatboxPage> {
         ),
         child: ListView(
           children: <Widget>[
-            chatProfile(),
+            //chatProfile(),
           ],
         ),
       ),
-      //bottomNavigationBar: chatbox_buttonbar(), 
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

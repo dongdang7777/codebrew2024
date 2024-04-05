@@ -1,54 +1,31 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class chatbox_buttonbar extends StatefulWidget {
+class ChatBottomBar extends StatefulWidget{
   @override
-  _chatbox_buttonbar createState() => _chatbox_buttonbar();
+  _ChatBottomBar createState() => _ChatBottomBar();
 }
 
-class _chatbox_buttonbar extends State<chatbox_buttonbar> {
-  final TextEditingController messageController = TextEditingController();
-
-  List<String> messages = [];
-
-  void sendMessage() {
-    final String text = messageController.text;
-   if (text.isNotEmpty) {
-      setState(() {
-        messages.add(text); 
-        messageController.clear(); 
-        }
-      );
-    }
-  }
-
+class _ChatBottomBar extends State<ChatBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          TextField(
-            keyboardType: TextInputType.text,
-            decoration: const InputDecoration(
-              labelText: 'Message',
-              contentPadding: EdgeInsets.only(right: 20, left: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {},
             ),
-            controller: messageController,
+            IconButton(
+              icon: const Icon(Icons.chat),
+              onPressed: () {},
             ),
-          IconButton(
-            onPressed: (){}, 
-            icon: const Icon(Icons.mic),
+            IconButton(
+              icon: const Icon(Icons.person),
+              onPressed: () {},
           ),
-          IconButton(
-            onPressed: (){
-              sendMessage();
-            }, 
-            icon: const Icon(Icons.send),
-          ),  
-          ],
-        ),
-      );
-  }   
+        ],
+      ),
+    );
+  }
 }

@@ -10,10 +10,9 @@ class _SettingPage extends State<SettingPage> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: Text(
-          'setting page'
+        body: Text('setting page'),
         ),
-      ),
-    );
+      );
+
   }
 }

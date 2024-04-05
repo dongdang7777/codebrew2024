@@ -1,8 +1,12 @@
 import 'package:codebrew2024/screen/chatbox_page.dart';
+import 'package:codebrew2024/widgets/chat_profile.dart';
+import 'package:codebrew2024/widgets/chatbox_buttonbar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:codebrew2024/screen/login_page.dart';
+import 'package:codebrew2024/screen/profile_screen.dart';
+import 'package:codebrew2024/screen/friendlist_page.dart';
 
 
 void main() async {
@@ -10,16 +14,17 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return LoginPage();
-    }
+    return MaterialApp(
+      home: profile_screen(),
+    );
+  }
 }

@@ -67,6 +67,8 @@ flutter:
     - images/fb_button.png
     - images/google_button.png
     - images/logo.png
+    - images/selfpic.png
+    - images/Fwend_slogan.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -83,25 +85,7 @@ flutter:
   #fonts:
   #  - family: Inter
   #  - fonts:
-  #    - asset: fonts/Inter/static/Inter-Black.ttf
-  #    - asset: fonts/Inter/static/Inter-Bold.ttf
-  #      style: bold
-  #    - asset: fonts/Inter/static/Inter-ExtraBold.ttf
-  #      style: extrabold
-  #    - asset: fonts/Inter/static/Inter-ExtraLight.ttf
-  #      style: ExtraLight
-  #    - asset: fonts/Inter/static/Inter-Light.ttf
-  #      style: Light
-  #    - asset: fonts/Inter/static/Inter-Medium.ttf
-  #      style: Medium
-  #    - asset: fonts/Inter/static/Inter-Regular.ttf
-  #      style: Regular
-  #    - asset: fonts/Inter/static/Inter-SemiBold.ttf
-  #      style: SemiBold
-  #    - asset: fonts/Inter/static/Inter-Thin.ttf
-  #      style: Thin
-  ##       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

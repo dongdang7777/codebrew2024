@@ -19,11 +19,11 @@ String randomString() {
 }
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ChatPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) => const MaterialApp(
@@ -51,13 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
           onPreviewDataFetched: _handlePreviewDataFetched,
           onSendPressed: _handleSendPressed,
           user: _user,
-          theme: const DefaultChatTheme(
-            inputBackgroundColor: Color(0xfff9f9f9),
-            inputTextColor: Colors.white,
-            primaryColor: Color(0xffb17acc),
+          theme: const DefaultChatTheme()
           )
-        ),
-      );
+        );
+
 
   void _addMessage(types.Message message) {
     setState(() {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:codebrew2024/widgets/bottom_navigation.dart';
 
 class friendlistpage extends StatelessWidget {
   @override
@@ -40,6 +41,7 @@ class friendlistpage extends StatelessWidget {
             ],
           ),
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     );
   }

@@ -10,7 +10,8 @@ import 'package:codebrew2024/screen/login_page.dart';
 import 'package:codebrew2024/screen/profile_screen.dart';
 import 'package:codebrew2024/screen/friendlist_page.dart';
 import 'package:codebrew2024/screen/chatpage.dart';
-
+import 'package:codebrew2024/screen/map_page.dart';
+import 'package:codebrew2024/screen/voucher_page.dart';
 
 void main() async {
    WidgetsFlutterBinding.ensureInitialized();

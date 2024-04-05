@@ -76,7 +76,9 @@ flutter:
     - images/logo.png
     - images/selfpic.png
     - images/Fwend_slogan.png
-  
+    - images/map.jpg
+    - images/voucher.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

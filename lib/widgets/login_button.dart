@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:codebrew2024/screen/main_page.dart';
-import 'package:codebrew2024/screen/settings_page.dart';
+import 'package:codebrew2024/screen/friendlist_page.dart';
+
 
 class LoginButton extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _LoginButton extends State<LoginButton> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => SettingPage(),
+          builder: (context) => friendlistpage(),
         ),
       );
   }
@@ -27,7 +27,7 @@ class _LoginButton extends State<LoginButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: double.infinity, // The Container takes full width of its parent
+              width: double.infinity,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [
@@ -38,7 +38,6 @@ class _LoginButton extends State<LoginButton> {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
-                // The border radius for a pill shape is typically half the height or more
                 borderRadius: BorderRadius.circular(20), // Adjust as necessary
               ),
               child: ElevatedButton(

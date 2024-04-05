@@ -1,4 +1,7 @@
+import 'package:codebrew2024/screen/map_page.dart';
 import 'package:flutter/material.dart';
+import 'package:codebrew2024/screen/friendlist_page.dart';
+import 'package:codebrew2024/screen/profile_screen.dart';
 
 class BottomBar extends StatefulWidget{
   @override
@@ -14,15 +17,36 @@ class _BottomBar extends State<BottomBar> {
           children: <Widget>[
             IconButton(
               icon: const Icon(Icons.map),
-              onPressed: () {},
+              onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MapPage(),
+              ),
+            );
+          },
             ),
             IconButton(
               icon: const Icon(Icons.chat),
-              onPressed: () {},
+              onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => friendlistpage(),
+              ),
+            );
+          },
             ),
             IconButton(
               icon: const Icon(Icons.person),
-              onPressed: () {},
+              onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => profile_screen(),
+               ),
+             );
+           },
           ),
         ],
       ),

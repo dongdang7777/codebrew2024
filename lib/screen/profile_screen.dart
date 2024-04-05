@@ -50,7 +50,7 @@ String companyuni = 'Unimelb';
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 350,
+                  height: 400,
                   width: 300,
                   child: Card(
                     margin: EdgeInsets.all(25.0),
@@ -67,18 +67,22 @@ String companyuni = 'Unimelb';
                               width: 100,
                               height: 100,
                               fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                          const Text(
+                                'User 101',
+                                textAlign:  TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w900,
+                                ),
                               ),
+                          TextButton(
+                                onPressed: (){},
+                                child: Text('Score'),
                           ),
-                          
-                        ),
-                        const Text(
-                          'User 101',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             child: ElevatedButton(
@@ -89,7 +93,7 @@ String companyuni = 'Unimelb';
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0),
                                 ),
-                            ),
+                              ),
                             ),
                           ),
                         Container(

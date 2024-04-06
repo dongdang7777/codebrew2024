@@ -8,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';  // Ensure you import Cupertino widgets
 import 'package:codebrew2024/widgets/bottom_navigation.dart';
+import 'package:codebrew2024/screen/chatpage.dart';
  // Ensure you import rendering.dart
 class friendlistpage extends StatefulWidget {
   @override
@@ -111,6 +112,7 @@ class _friendlistpageState extends State<friendlistpage> {
                   placeholder: "Search Contacts",
                 ),
               ),
+
               // More widgets can be added here for contacts list or other UI elements
                
               Padding(
@@ -132,6 +134,7 @@ class _friendlistpageState extends State<friendlistpage> {
                   }
                   },
                 ) ,
+
               ),
               // End of list
              

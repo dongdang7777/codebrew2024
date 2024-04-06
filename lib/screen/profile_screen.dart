@@ -19,26 +19,6 @@ String companyuni = 'Unimelb';
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-
-          leading: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              IconButton(
-                alignment: Alignment.topRight,
-                icon: Icon(Icons.settings),
-                onPressed:() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SettingPage(),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
         body: SizedBox(
           width: double.infinity,
           height: double.infinity,
@@ -86,15 +66,39 @@ String companyuni = 'Unimelb';
                                   fontWeight: FontWeight.w900,
                                 ),
                               ),
-                          TextButton(
-                                onPressed: (){},
-                                child: Text('Score'),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              TextButton(
+                                    onPressed: (){},
+                                    child: Text('Score',
+                                    style: TextStyle(
+                                        color: Color.fromARGB(255, 79, 206, 92),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w900,
+                                        ),),
+                              ),
+                              Text('89',
+                              style: TextStyle(
+                                color: Color.fromRGBO(97, 192, 232, 1),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                                ),),
+                              
+                            ],
                           ),
                           Container(
-                            margin: const EdgeInsets.only(top: 10),
+                            margin: const EdgeInsets.only(top: 2),
                             child: ElevatedButton(
                               onPressed: (){}, 
-                              child: Text('Follow'),
+                              child: Text(
+                                'Follow',
+                                style: TextStyle(
+                                  color: Color(0xff2B2B2B),
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Color(0xffFBBC05),
                                 shape: RoundedRectangleBorder(
@@ -155,19 +159,19 @@ String companyuni = 'Unimelb';
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                interest_bubble(hobby: 'music', 'music'),
-                                interest_bubble(hobby: 'art', 'art'),
-                                interest_bubble(hobby: 'sport', 'sport'),
+                                interest_bubble(hobby: 'study', 'study'),
+                                interest_bubble(hobby: 'travel', 'travel'),
+                                interest_bubble(hobby: 'compsci', 'compsci'),
                               ]
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                interest_bubble(hobby: 'music', 'music'),
-                                interest_bubble(hobby: 'art', 'art'),
-                                interest_bubble(hobby: 'sport', 'sport'),
-                          ]
-                        ),
+                        //    Row(
+                        //      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        //      children: [
+                        //        interest_bubble(hobby: 'music', 'music'),
+                        //        interest_bubble(hobby: 'art', 'art'),
+                        //        interest_bubble(hobby: 'sport', 'sport'),
+                        //  ]
+                        //),
                       ],
                      ),
                   ),

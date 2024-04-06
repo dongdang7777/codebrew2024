@@ -1,3 +1,7 @@
+import 'package:codebrew2024/resources/get_users.dart';
+import 'package:codebrew2024/services/api.dart';
+import 'package:codebrew2024/widgets/nearby_user.dart';
+import 'package:codebrew2024/widgets/user_title.dart';
 import 'package:flutter/material.dart';
 import 'package:codebrew2024/screen/friendlist_page.dart';
 
@@ -6,7 +10,25 @@ class MapPage extends StatefulWidget {
   _MapPageState createState() => _MapPageState();
 }
 
+
 class _MapPageState extends State<MapPage> {
+
+  Future<List<Widget>> _buildUsersList(String id)async {
+    List<Map<String,dynamic>> temp=await Api.getNearby(id);
+    
+    List<Widget> k=[];
+    for (final x in temp){
+      Map<String,dynamic>  heu=await Api.getHeuristic(id, x['id']);
+      String per=heu['percentage'].toString()+"%";
+      k.add(
+        NearbyUser(name: x['name'], pronouns: x['pronoun'], compatibility:per)
+      );
+    }
+
+    return k;
+  }
+
+  
   @override
   void initState() {
     super.initState();
@@ -50,181 +72,24 @@ class _MapPageState extends State<MapPage> {
         ),
         child: Padding(
           padding: const EdgeInsets.only(top:16,left:8,right:8,bottom:8),
-          child: ListView(
-            children: <Widget>[
-              //1st card
-              ListTile(
-                leading: Image.asset('images/selfpic.png'),
-                title: const Text(
-                  'Nickname',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              subtitle: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                  'Pronouns',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                 SizedBox(width: 6), // Space between the text and the number
-                  Text(
-                    '89%',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      color: Color(0xFF34C759), // Hex color code for green
-                    ),
-                  ),
-                ],
-              ),
-                enabled: _enabled,
-                selected: _selected,
-                onTap: () {
-                  setState(() {
-                    _selected = !_selected;
-                  });
-                },
-              ),
-              const Divider(
-                height: 1,
-                thickness: 1,
-                indent: 8,
-                endIndent: 8,
-                color: Color(0xFFE6E6E6),
-              ),
-              //2nd card
-              ListTile(
-                leading: Image.asset('images/selfpic.png'),
-                title: const Text(
-                  'Nickname2',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              subtitle: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                  'Pronouns2',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                 SizedBox(width: 6), // Space between the text and the number
-                  Text(
-                    '75%',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 86, 199, 52), // Hex color code for green
-                    ),
-                  ),
-                ],
-              ),
-                enabled: _enabled,
-                selected: _selected,
-                onTap: () {
-                  setState(() {
-                    _selected = !_selected;
-                  });
-                },
-              ),
-              const Divider(
-                height: 1,
-                thickness: 1,
-                indent: 8,
-                endIndent: 8,
-                color: Color(0xFFE6E6E6),
-              ),
-              //3rd card
-              ListTile(
-                leading: Image.asset('images/selfpic.png'),
-                title: const Text(
-                  'Nickname3',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              subtitle: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                  'Pronouns3',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                 SizedBox(width: 6), // Space between the text and the number
-                  Text(
-                    '42%',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 199, 162, 52), // Hex color code for green
-                    ),
-                  ),
-                ],
-              ),
-                enabled: _enabled,
-                selected: _selected,
-                onTap: () {
-                  setState(() {
-                    _selected = !_selected;
-                  });
-                },
-              ),
-              //divider
-              const Divider(
-                height: 1,
-                thickness: 1,
-                indent: 8,
-                endIndent: 8,
-                color: Color(0xFFE6E6E6),
-              ),
-              //4th Card
-              ListTile(
-                leading: Image.asset('images/selfpic.png'),
-                title: const Text(
-                  'Nickname4',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              subtitle: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                  'Pronouns4',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                 SizedBox(width: 6), // Space between the text and the number
-                  Text(
-                    '20%',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 199, 64, 52), // Hex color code for green
-                    ),
-                  ),
-                ],
-              ),
-                enabled: _enabled,
-                selected: _selected,
-                onTap: () {
-                  setState(() {
-                    _selected = !_selected;
-                  });
-                },
-              ),
-            ],
-          ),
-        ),
+          child: FutureBuilder<List<Widget>>(
+                future: _buildUsersList("BLfiGQYFbnUv6AG7kxgdcjIBxrz2"),
+                builder: (context,AsyncSnapshot<List<Widget>> snapshot){
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Container(
+                      child: CircularProgressIndicator(),
+                    );
+
+                  } else if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  } else {
+                    return Column(
+                      children: snapshot.data!,
+                    );
+                  }
+                }
+            )
+          ),  //1st card
       );
     },
   );

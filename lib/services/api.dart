@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // For using json.decode
 
 class Api{
 
-  static Future<Map<String,dynamic>> getNearby(String userId) async {
+  static Future<List<Map<String,dynamic>>> getNearby(String userId) async {
     final response = await http.post(
       Uri.parse('https://us-central1-test-8a935.cloudfunctions.net/app/api/nearby'),
       headers: <String, String>{
@@ -17,7 +18,12 @@ class Api{
     if (response.statusCode == 200) {
       // If the server returns a 200 OK response, then parse the JSON.
       Map<String, dynamic> data = jsonDecode(response.body);
-      return data;
+      List<Map<String,dynamic>> res=[];
+      
+      for (final x in data['data']){
+          res.add(x);
+      }
+      return res;
     } else {
       throw Exception('Failed to load data');
     }
@@ -43,6 +49,13 @@ class Api{
     } else {
       throw Exception('Failed to load data');
     }
+  }
+
+  static Future<Map<String,dynamic>?> getUser(String id)async {
+    FirebaseFirestore db=FirebaseFirestore.instance;
+    final dt=await db.collection('users').doc(id).get();
+    final userData=dt.data();
+    return userData;
   }
 
 }

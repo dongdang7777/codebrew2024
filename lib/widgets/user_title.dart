@@ -11,21 +11,24 @@ class UserTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap:this.onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          color:Colors.white,
-          borderRadius: BorderRadius.circular(10),
+    return Column(
+      children: <Widget>[
+        ListTile(
+          leading: Image.asset('images/selfpic.png'), // Replace with your leading widget
+          title: Text(this.text), // Example title
+          subtitle: Text('Hi hows your day'), // Example subtitle
+          trailing: Icon(Icons.message), // Replace with your trailing widget
+      
+          onTap: this.onTap,
         ),
-        child:Row(
-          children: [
-            Text(
-              text,
-            )
-          ],
+        const Divider(
+          height: 1,
+          thickness: 1,
+          indent: 8,
+          endIndent: 8,
+          color: Color(0xFFE6E6E6),
         ),
-      ),
+      ]
     );
   }
 }

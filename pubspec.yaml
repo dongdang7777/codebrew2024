@@ -71,13 +71,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/fb_button.png
-    - images/google_button.png
-    - images/logo.png
-    - images/selfpic.png
-    - images/Fwend_slogan.png
-    - images/map.jpg
-    - images/voucher.png
+    - images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

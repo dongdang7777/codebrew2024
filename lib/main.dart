@@ -1,4 +1,3 @@
-import 'package:codebrew2024/screen/friend_page.dart';
 import 'package:codebrew2024/widgets/chat_profile.dart';
 import 'package:codebrew2024/widgets/chatbox_buttonbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         builder:(context,snapshot){
           if (snapshot.connectionState==ConnectionState.active){
             if (snapshot.hasData){
-                return (FriendPage()); 
+                return (friendlistpage()); 
             }else if (snapshot.hasError){
           }
           }else if (snapshot.connectionState==ConnectionState.waiting){

@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';  // Ensure you import Cupertino widgets
 import 'package:codebrew2024/widgets/bottom_navigation.dart';
+import 'package:codebrew2024/screen/chatpage.dart';
  // Ensure you import rendering.dart
 class friendlistpage extends StatefulWidget {
   @override
@@ -94,7 +95,15 @@ class _friendlistpageState extends State<friendlistpage> {
                         leading: Image.asset('images/selfpic.png'), // Replace with your leading widget
                         title: Text('Nickname ${index + 1}'), // Example title
                         subtitle: Text('Hi hows your day'), // Example subtitle
-                        trailing: Icon(Icons.message), // Replace with your trailing widget
+                        trailing: IconButton(
+                          icon: Icon(Icons.message),
+                          onPressed: () {Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => ChatPage(),
+                                          ),
+                                          );}, // Replace with your trailing widget
+                        ), // Replace with your trailing widget
                     
                         onTap: () {
                       // Handle the tap event

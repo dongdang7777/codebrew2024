@@ -20,16 +20,23 @@ String companyuni = 'Unimelb';
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.settings),
-            onPressed:() {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SettingPage(),
-                ),
-              );
-            },
+
+          leading: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(
+                alignment: Alignment.topRight,
+                icon: Icon(Icons.settings),
+                onPressed:() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SettingPage(),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
         body: SizedBox(
